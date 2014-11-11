@@ -46,11 +46,11 @@ func (b *Bot) CallbackLoop() {
 // Callback represents a Handler and a Sender for
 // a specified callback
 type Callback struct {
-	Handler irc.Handler
-	Sender  irc.Sender
+        Handler Handler
+        Sender  irc.Sender
 }
 
 // Handler interface is used to register handlers for IRC commands
 type Handler interface {
-	Handle(*Message, Sender)
+        Handle(irc.Sender, *irc.Message)
 }
